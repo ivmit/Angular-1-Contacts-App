@@ -36,6 +36,9 @@ module.exports = function(config) {
       'bower_components/firebase/firebase.js',
       'bower_components/angularfire/dist/angularfire.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/sweetalert/dist/sweetalert.min.js',
+      'bower_components/ngSweetAlert/SweetAlert.js',
+      'bower_components/angular-sweetalert/lib/sweetalert.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
