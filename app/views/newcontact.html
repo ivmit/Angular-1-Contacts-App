@@ -1,0 +1,61 @@
+
+<div class="row reset-h2">
+  <div class="col-md-6 ">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="col-md-6">
+    <a href="#/" type="button" class="btn btn-primary btn-back">Back</a>
+  </div>
+</div>
+
+<form ng-submit="submitForm()">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Name..." ng-model="name" >
+      </div>
+      <div class="form-group">
+        <label for="company">Company:</label>
+        <input type="text" class="form-control" id="company" placeholder="Company..." ng-model="company">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" placeholder="Email..." ng-model="email">
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Phone:</label>
+        <input type="text" class="form-control" id="mobile" placeholder="Mobile..." ng-model="mobile">
+      </div>
+      <div class="form-group">
+        <label for="office">Office Phone:</label>
+        <input type="text" class="form-control" id="office" placeholder="Office..." ng-model="office">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="home">Home Phone:</label>
+        <input type="text" class="form-control" id="home" placeholder="Home..." ng-model="home">
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" id="city" placeholder="City..." ng-model="city">
+      </div>
+      <div class="form-group">
+        <label for="street">Street:</label>
+        <input type="text" class="form-control" id="Street" placeholder="Street..." ng-model="street">
+      </div>
+      <div class="form-group">
+        <label for="number">Number:</label>
+        <input type="text" class="form-control" id="number" placeholder="Number..." ng-model="number">
+      </div>
+      <div class="form-group">
+        <label for="postal">Postal Code:</label>
+        <input type="text" class="form-control" id="postal" placeholder="Postal..." ng-model="postal">
+      </div>
+    </div>
+    <div class="col-md-12 form-footer">
+        <button type="submit" class="btn btn-primary">{{btnLabel}}</button>
+    </div>
+  </div>
+</form>

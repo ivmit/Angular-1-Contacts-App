@@ -89,3 +89,45 @@ body {
     border-bottom: 0;
   }
 }
+.contact-row td {
+  vertical-align: middle!important;
+}
+
+.new-contact {
+  float: right;
+}
+
+.panel-heading span {
+  display: inline-block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+
+.animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.animation.ng-enter {
+  opacity: 0;
+  -webkit-transition: 0.4s ease-in all; /* Chrome */
+  transition: 0.4s ease-in all;
+}
+
+.btn-back {
+  display: inline-block;
+  float:right;
+}
+
+.reset-h2, .form-footer {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.reset-h2 h2 {
+  margin: 0;
+}
+
+
+
+

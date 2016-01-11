@@ -8,10 +8,39 @@
  * Controller of the ngContactsApp
  */
 angular.module('ngContactsApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['$scope', '$firebaseArray', 'contactToBeEdited', function ($scope,$firebaseArray,contactToBeEdited ) {
+
+    var ref = new Firebase("https://my-ng-contacts.firebaseio.com/");
+    $scope.contacts = $firebaseArray(ref);
+
+
+
+    $scope.editContact = function(contact){
+      contactToBeEdited.addContact(contact);
+    };
+
+
+
+    //Remove Contact
+    $scope.deleteContact = function(contact){
+      $scope.contacts.$remove(contact);
+    };
+
+
+  }])
+  .service('contactToBeEdited', function() {
+    var Contact;
+
+    this.addContact = function(contactFromMainCTRL) {
+      Contact = contactFromMainCTRL
+    };
+
+    this.getContact = function() {
+      return Contact;
+    };
+
+
+
+
+
+});
