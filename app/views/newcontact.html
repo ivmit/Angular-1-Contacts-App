@@ -11,50 +11,67 @@
 <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
   <div class="row">
     <div class="col-md-6">
-      <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine, 'has-success': userForm.name.$valid   }">
         <label for="name">Name:</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="Name..." ng-model="name"  required>
-        <span ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="glyphicon glyphicon-remove form-control-feedback"></span>
-        <p ng-show="userForm.name.$invalid && !userForm.name.$pristine"  class="help-block" role="alert">Your name is required!</p>
-        <p ng-show="!userForm.name.$invalid && userForm.name.$pristine"  class="help-block" role="alert">Your name is required!</p>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Name..." ng-model="name"  required ng-minlength="3">
+        <span ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="glyphicon glyphicon-remove form-control-feedback name-glyph"></span>
+        <span ng-show="userForm.name.$valid" class="glyphicon glyphicon-ok form-control-feedback name-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.company.$invalid && !userForm.company.$pristine, 'has-success': userForm.company.$valid}">
         <label for="company">Company:</label>
-        <input type="text" class="form-control" id="company" placeholder="Company..." ng-model="company">
+        <input type="text" class="form-control" id="company" name="company" placeholder="Company..." ng-model="company" ng-minlength="5" required>
+        <span ng-show="userForm.company.$invalid && !userForm.company.$pristine" class="glyphicon glyphicon-remove form-control-feedback company-glyph"></span>
+        <span ng-show="userForm.company.$valid" class="glyphicon glyphicon-ok form-control-feedback company-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine, 'has-success': userForm.email.$valid   }">
         <label for="email">Email address:</label>
-        <input type="email" class="form-control" id="email" placeholder="Email..." ng-model="email">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email..." ng-model="email" required>
+        <span ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="glyphicon glyphicon-remove form-control-feedback email-glyph"></span>
+        <span ng-show="userForm.email.$valid" class="glyphicon glyphicon-ok form-control-feedback email-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.mobile.$invalid && !userForm.mobile.$pristine, 'has-success': userForm.mobile.$valid   }">
         <label for="mobile">Mobile Phone:</label>
-        <input type="text" class="form-control" id="mobile" placeholder="Mobile..." ng-model="mobile">
+        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Mobile..." ng-model="mobile" required ng-minlength="8">
+        <span ng-show="userForm.mobile.$invalid && !userForm.mobile.$pristine" class="glyphicon glyphicon-remove form-control-feedback mobile-glyph"></span>
+        <span ng-show="userForm.mobile.$valid" class="glyphicon glyphicon-ok form-control-feedback mobile-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.office.$invalid && !userForm.office.$pristine, 'has-success': userForm.office.$valid   }">
         <label for="office">Office Phone:</label>
-        <input type="text" class="form-control" id="office" placeholder="Office..." ng-model="office">
+        <input type="tel" class="form-control" id="office" name="office"  placeholder="Office..." ng-model="office" required ng-minlength="4">
+        <span ng-show="userForm.office.$invalid && !userForm.office.$pristine" class="glyphicon glyphicon-remove form-control-feedback office-glyph"></span>
+        <span ng-show="userForm.office.$valid" class="glyphicon glyphicon-ok form-control-feedback office-glyph"></span>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.home.$invalid && !userForm.home.$pristine, 'has-success': userForm.home.$valid   }">
         <label for="home">Home Phone:</label>
-        <input type="text" class="form-control" id="home" placeholder="Home..." ng-model="home">
+        <input type="tel" class="form-control" id="home" name="home"  placeholder="Home..." ng-model="home" required>
+        <span ng-show="userForm.home.$invalid && !userForm.home.$pristine" class="glyphicon glyphicon-remove form-control-feedback home-glyph"></span>
+        <span ng-show="userForm.home.$valid" class="glyphicon glyphicon-ok form-control-feedback home-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.city.$invalid && !userForm.city.$pristine, 'has-success': userForm.city.$valid   }">
         <label for="city">City:</label>
-        <input type="text" class="form-control" id="city" placeholder="City..." ng-model="city">
+        <input type="text" class="form-control" id="city" name="city" placeholder="City..." ng-model="city" required ng-minlength="2">
+        <span ng-show="userForm.city.$invalid && !userForm.city.$pristine" class="glyphicon glyphicon-remove form-control-feedback city-glyph"></span>
+        <span ng-show="userForm.city.$valid" class="glyphicon glyphicon-ok form-control-feedback city-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.street.$invalid && !userForm.street.$pristine, 'has-success': userForm.street.$valid   }">
         <label for="street">Street:</label>
-        <input type="text" class="form-control" id="Street" placeholder="Street..." ng-model="street">
+        <input type="text" class="form-control" id="Street" name="street" placeholder="Street..." ng-model="street" required ng-minlength="4">
+        <span ng-show="userForm.street.$invalid && !userForm.street.$pristine" class="glyphicon glyphicon-remove form-control-feedback street-glyph"></span>
+        <span ng-show="userForm.street.$valid" class="glyphicon glyphicon-ok form-control-feedback street-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.number.$invalid && !userForm.number.$pristine, 'has-success': userForm.number.$valid   }">
         <label for="number">Number:</label>
-        <input type="text" class="form-control" id="number" placeholder="Number..." ng-model="number">
+        <input type="number" class="form-control" id="number" name="number" placeholder="Number..." ng-model="number" required ng-minlength="1">
+        <span ng-show="userForm.number.$invalid && !userForm.number.$pristine" class="glyphicon glyphicon-remove form-control-feedback number-glyph"></span>
+        <span ng-show="userForm.number.$valid" class="glyphicon glyphicon-ok form-control-feedback number-glyph"></span>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{ 'has-error' : userForm.postal.$invalid && !userForm.postal.$pristine, 'has-success': userForm.postal.$valid   }">
         <label for="postal">Postal Code:</label>
-        <input type="text" class="form-control" id="postal" placeholder="Postal..." ng-model="postal">
+        <input type="text" class="form-control" id="postal" name="postal" placeholder="Postal..." ng-model="postal" required ng-minlength="3">
+        <span ng-show="userForm.postal.$invalid && !userForm.postal.$pristine" class="glyphicon glyphicon-remove form-control-feedback postal-glyph"></span>
+        <span ng-show="userForm.postal.$valid" class="glyphicon glyphicon-ok form-control-feedback postal-glyph"></span>
       </div>
     </div>
     <div class="col-md-12 form-footer">

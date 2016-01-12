@@ -17,6 +17,9 @@ angular.module('ngContactsApp')
 
     $scope.editContact = function(contact){
       contactToBeEdited.addContact(contact);
+      if (typeof contact !== "undefined") {
+        contactToBeEdited.setSendContact(true)
+      }
     };
 
 
@@ -30,7 +33,7 @@ angular.module('ngContactsApp')
   }])
   .service('contactToBeEdited', function() {
     var Contact;
-
+    var sendContact;
     this.addContact = function(contactFromMainCTRL) {
       Contact = contactFromMainCTRL
     };
@@ -39,7 +42,14 @@ angular.module('ngContactsApp')
       return Contact;
     };
 
+    this.setSendContact = function(value) {
+      sendContact = value
+    };
 
+
+    this.getSendContact = function(){
+      return sendContact
+    };
 
 
 

@@ -19,6 +19,11 @@ angular.module('ngContactsApp')
     $scope.contacts = $firebaseArray(ref);
     $scope.edit = false;
 
+    if($location.$$path === "/edit" && contactToBeEdited.getSendContact() !== true){
+      $window.location.href = '/';
+    }
+
+
     //Check to see if it's the edit page
     if($location.$$path === "/edit") {
       $scope.title = "Edit Contact";
@@ -87,31 +92,37 @@ angular.module('ngContactsApp')
 
 
     //Add new contact to database
-    $scope.submitForm =function(){
+    $scope.submitForm =function(userForm) {
 
-      $scope.contacts.$add(
-        {
-          name : this.name,
-          email : this.email,
-          company : this.company,
-          phone : {
-            mobile : this.mobile,
-            office : this.office,
-            home : this.home
-          },
-          address : {
-            city : this.city,
-            street : this.street,
-            number : this.number,
-            postalCode : this.postal
+      if (typeof this.name == "undefined") {
+        SweetAlert.error("Please makes sure that all fields have valid values")
+      } else {
+
+        $scope.contacts.$add(
+          {
+            name: this.name,
+            email: this.email,
+            company: this.company,
+            phone: {
+              mobile: this.mobile,
+              office: this.office,
+              home: this.home
+            },
+            address: {
+              city: this.city,
+              street: this.street,
+              number: this.number,
+              postalCode: this.postal
+            }
           }
-        }
-      ).then(function(){
-          SweetAlert.success("Contact '"+ $scope.name + "' add successfully to Firebase.You will be redirected to the main page").then(function(){
-            $window.location.href = '/';
+        ).then(function () {
+            SweetAlert.success("Contact '" + $scope.name + "' add successfully to Firebase.You will be redirected to the main page").then(function () {
+              $window.location.href = '/';
+            });
           });
-        });
 
+
+      }
 
     }
 

@@ -1,7 +1,6 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "../bower_components/sweetalert/dist/sweetalert.css";
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 .browsehappy {
@@ -129,15 +128,51 @@ body {
   margin: 0;
 }
 
-.form-control-feedback{
-  position: absolute;
+.postal-glyph{
+  top: 320px!important;
+  right: -15px!important;
+}
+
+.number-glyph {
+  top: 246px!important;
+  right: -15px!important;
+}
+
+.street-glyph {
+  top: 172px!important;
+  right: -15px!important;
+}
+
+.city-glyph {
+  top: 98px!important;
+  right: -15px!important;
+}
+
+.home-glyph {
   top: 24px!important;
-  right: 10px!important;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  pointer-events: none;
+  right: -15px!important;
+}
+
+.office-glyph {
+  top: 320px!important;
+  right: -15px!important;
+}
+.mobile-glyph {
+  top: 246px!important;
+  right: -15px!important;
+}
+
+.email-glyph {
+  top: 172px!important;
+  right: -15px!important;
+}
+
+.company-glyph {
+  top: 98px!important;
+  right: -15px!important;
+}
+
+.name-glyph {
+  top: 24px!important;
+  right: -15px!important;
 }
